@@ -1,11 +1,33 @@
+:root {
+  --primary-color: #ee2211;
+  --dark-primary-color: #990000;
+  --background-1: #f7f7f7;
+  --background-2: #ffffff;
+  --text-color: #000000;
+  --subtitle-color: rgba(0, 0, 0, 0.2);
+  --wave: url(./img/light-wave.svg);
+  --see-more-button: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-1: #111111;
+    --background-2: #000000;
+    --text-color: #ffffff;
+    --subtitle-color: rgba(255, 255, 255, 0.2);
+    --wave: url(./img/dark-wave.svg);
+  }
+}
+
 body {
   font-family: "Fira Sans", Arial, Helvetica, sans-serif;
   margin: 0px;
-  background: #f7f7f7;
+  background: var(--background-1);
   display: grid;
   gap: 60px;
   justify-items: center;
   margin-top: 60px;
+  color: var(--text-color);
 }
 
 img {
@@ -50,16 +72,16 @@ p {
 
 .menu a {
   display: block;
-  background: #ffffff;
+  background: var(--background-2);
   padding: 1rem 2rem;
   border-radius: 4px;
-  color: #000000;
+  color: var(--text-color);
   text-transform: uppercase;
-  border: 2px solid #ffffff;
+  border: 2px solid var(--background-2);
 }
 
 .menu a:hover {
-  border-color: #ee2211;
+  border-color: var(--primary-color);
 }
 
 .content {
@@ -69,7 +91,7 @@ p {
 }
 
 .introduction {
-  background: #ffffff;
+  background: var(--background-2);
   padding: 40px;
   text-align: right;
   position: relative;
@@ -88,7 +110,7 @@ p {
   content: "";
   width: 60px;
   height: 4px;
-  background: #ee2211;
+  background: var(--primary-color);
   position: absolute;
   top: 30px;
   right: -30px;
@@ -100,29 +122,29 @@ p {
 }
 
 .see-more {
-  background: #ee2211;
-  color: #ffffff;
+  background: var(--primary-color);
+  color: var(--see-more-button);
   padding: 1rem 2rem;
   border-radius: 4px;
   text-transform: uppercase;
 }
 
 .see-more:hover {
-  background: #990000;
+  background: var(--dark-primary-color);
 }
 
 .subtitle {
   font-size: 4rem;
   text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.2);
+  color: var(--subtitle-color);
   text-align: right;
   padding: 40px;
   align-self: center;
-  background-image: url(./img/onda.svg);
+  background-image: var(--wave);
 }
 
 .advantages {
-  background: #ffffff;
+  background: var(--background-2);
   padding: 40px;
 }
 
@@ -135,11 +157,11 @@ p {
 }
 
 .advantages__item:nth-child(odd) {
-  background: #f7f7f7;
+  background: var(--background-1);
 }
 
 .advantages__item:hover {
-  border-left-color: #ee2211;
+  border-left-color: var(--primary-color);
 }
 
 .advantages__item p {
@@ -147,7 +169,7 @@ p {
 }
 
 .footer {
-  background: #ffffff;
+  background: var(--background-2);
   width: 100%;
   text-align: center;
   padding: 40px;
